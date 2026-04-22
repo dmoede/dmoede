@@ -1,0 +1,2 @@
+python-telegram-bot[job-queue]==22.7
+pytz==2026.1.post1

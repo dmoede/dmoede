@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Vizsla golden-rust palette -->
+    <color name="vizsla_rust">#B4593B</color>
+    <color name="vizsla_rust_dark">#8C3F27</color>
+    <color name="vizsla_cream">#FBF3EC</color>
+    <color name="vizsla_gold">#D9945F</color>
+    <color name="widget_text">#FFFFFF</color>
+    <color name="widget_text_soft">#F5DFD2</color>
+</resources>

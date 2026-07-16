@@ -1,5 +1,6 @@
 package com.dmoede.garytracker
 
+import android.app.DatePickerDialog
 import android.os.Bundle
 import android.view.inputmethod.InputMethodManager
 import android.widget.ArrayAdapter
@@ -17,6 +18,9 @@ class MainActivity : AppCompatActivity() {
     private lateinit var adapter: ArrayAdapter<String>
     private var entries: List<GaryData.WeightEntry> = emptyList()
 
+    /** Date the next logged weight will be recorded under; defaults to today. */
+    private var selectedDate: LocalDate = LocalDate.now()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -25,15 +29,21 @@ class MainActivity : AppCompatActivity() {
         val listView = findViewById<ListView>(R.id.weight_list)
         listView.adapter = adapter
 
+        val dateButton = findViewById<Button>(R.id.date_button)
+        updateDateButton()
+        dateButton.setOnClickListener { showDatePicker() }
+
         val input = findViewById<EditText>(R.id.weight_input)
         findViewById<Button>(R.id.log_button).setOnClickListener {
             val lbs = input.text.toString().toDoubleOrNull()
             if (lbs == null || lbs <= 0 || lbs > 200) {
                 Toast.makeText(this, getString(R.string.invalid_weight), Toast.LENGTH_SHORT).show()
             } else {
-                GaryData.addWeight(this, GaryData.WeightEntry(LocalDate.now(), lbs))
+                GaryData.addWeight(this, GaryData.WeightEntry(selectedDate, lbs))
                 input.text.clear()
                 hideKeyboard(input)
+                selectedDate = LocalDate.now()
+                updateDateButton()
                 refresh()
                 GaryWidgetProvider.updateAll(this)
                 Toast.makeText(this, getString(R.string.weight_logged), Toast.LENGTH_SHORT).show()
@@ -83,6 +93,30 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<TextView>(R.id.empty_text).text =
             if (entries.isEmpty()) getString(R.string.no_weights) else ""
+    }
+
+    private fun updateDateButton() {
+        val label = if (selectedDate == LocalDate.now()) getString(R.string.date_today)
+            else GaryData.formatDateShort(selectedDate)
+        findViewById<Button>(R.id.date_button).text = label
+    }
+
+    private fun showDatePicker() {
+        val dialog = DatePickerDialog(
+            this,
+            { _, year, month, day ->
+                selectedDate = LocalDate.of(year, month + 1, day)
+                updateDateButton()
+            },
+            selectedDate.year,
+            selectedDate.monthValue - 1,
+            selectedDate.dayOfMonth
+        )
+        // Can't weigh him before he was born, or in the future.
+        dialog.datePicker.minDate =
+            GaryData.BIRTHDAY.toEpochDay() * 24L * 60L * 60L * 1000L
+        dialog.datePicker.maxDate = System.currentTimeMillis()
+        dialog.show()
     }
 
     private fun hideKeyboard(view: EditText) {

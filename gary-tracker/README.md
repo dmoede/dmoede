@@ -9,7 +9,8 @@ widget showing his current age and latest weight.
   Computed from his birthday, so it's always current.
 - **Weight log** — enter a weight in lbs; entries are saved on-device
   (one per day, newest shown first, with the change from the previous
-  weigh-in). Long-press an entry to delete it.
+  weigh-in). Tap the date button to back-date a weigh-in to any day
+  between Gary's birthday and today. Long-press an entry to delete it.
 - **Home-screen widget** — shows Gary's age and most recent weight, refreshes
   itself periodically, and updates immediately when you log a weight. Tap it
   to open the app.

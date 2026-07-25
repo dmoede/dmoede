@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Gary</string>
+    <string name="gary_title">Gary 🐾</string>
+    <string name="born_line">Born %1$s • %2$d days ago</string>
+    <string name="weight_hint">Weight (lbs)</string>
+    <string name="log_weight">Log</string>
+    <string name="date_today">Today</string>
+    <string name="weight_logged">Logged! Good boy, Gary 🐶</string>
+    <string name="invalid_weight">Enter a valid weight in lbs</string>
+    <string name="no_weights">No weights logged yet.\nWeigh Gary and log his first one!</string>
+    <string name="no_weights_widget">No weights yet</string>
+    <string name="weight_history">Weight history</string>
+    <string name="delete_title">Delete entry?</string>
+    <string name="delete_message">Remove %1$s on %2$s?</string>
+    <string name="delete">Delete</string>
+    <string name="hint_long_press">Tap the date to back-date a weigh-in • long-press an entry to delete it</string>
+    <string name="widget_description">Gary\'s age and latest weight</string>
+</resources>

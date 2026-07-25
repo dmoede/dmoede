@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.GaryTracker" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/vizsla_rust</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+        <item name="colorPrimaryContainer">@color/vizsla_gold</item>
+        <item name="android:statusBarColor">@color/vizsla_rust_dark</item>
+    </style>
+</resources>

@@ -15,9 +15,25 @@ android {
         versionName = "1.0"
     }
 
+    signingConfigs {
+        // A fixed key committed to the repo so every build is signed
+        // identically — lets installs update in place instead of failing
+        // with "App not installed". Fine for a personal, non-Play-Store app.
+        create("stable") {
+            storeFile = file("gary-signing.keystore")
+            storePassword = "garytracker"
+            keyAlias = "gary"
+            keyPassword = "garytracker"
+        }
+    }
+
     buildTypes {
+        debug {
+            signingConfig = signingConfigs.getByName("stable")
+        }
         release {
             isMinifyEnabled = false
+            signingConfig = signingConfigs.getByName("stable")
         }
     }
 

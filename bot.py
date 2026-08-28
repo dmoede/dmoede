@@ -5,6 +5,7 @@ import random
 from datetime import time
 
 import pytz
+from dotenv import load_dotenv
 from telegram import Update
 from telegram.ext import (
     Application,
@@ -16,7 +17,12 @@ from telegram.ext import (
 
 from questions import QUESTIONS
 
-BOT_TOKEN = "8717912049:AAFtBLWYpEmgHSk6RmB4QFuIHSi0-7e3yp8"
+load_dotenv()
+
+BOT_TOKEN = os.environ.get("BOT_TOKEN")
+if not BOT_TOKEN:
+    raise RuntimeError("BOT_TOKEN environment variable is not set")
+
 DATA_FILE = "data.json"
 MOUNTAIN_TZ = pytz.timezone("America/Denver")
 QUIZ_HOUR = 18

@@ -1,0 +1,50 @@
+[
+  {
+    "message_id": "AAMkAGI2TG93AAA=",
+    "conversation_id": "AAQkAGI2TG93CCC=",
+    "subject": "RE: Data load failing since Monday",
+    "received_at": "2026-10-12T14:03:00Z",
+    "outlook_link": "https://outlook.office365.com/owa/?ItemID=AAMkAGI2TG93AAA%3D&exvsurl=1&viewmodel=ReadMessageItem",
+    "analysis": {
+      "customer_account": "Example Law",
+      "contact_name": "Jane Smith",
+      "contact_email": "jsmith@examplelaw.com",
+      "direction": "Inbound",
+      "category": "Data / Integration",
+      "sentiment": "Negative",
+      "urgency": "P2 - High",
+      "summary": "Example Law's nightly Aderant load has failed since Monday, so their matter dashboards are three days stale. Jane needs it fixed before Thursday's partner meeting.",
+      "customer_asks": ["Restore the nightly Aderant load", "Confirm root cause in writing"],
+      "action_items": [{"task": "Open a P2 support ticket and assign to integrations", "owner": "", "due_date": "2026-10-14"}],
+      "commitments_made": ["Support promised an update by end of day Tuesday"],
+      "risk_signals": ["Repeated data-load failures this quarter"],
+      "products_mentioned": ["Aderant", "Matter dashboards"],
+      "needs_response": true,
+      "suggested_next_step": "Call Jane today with an ETA and a named owner before the Thursday partner meeting."
+    }
+  },
+  {
+    "message_id": "AAMkAGI2TG94BBB=",
+    "conversation_id": "AAQkAGI2TG94DDD=",
+    "subject": "Thank you, great QBR",
+    "received_at": "2026-10-12T19:40:00Z",
+    "outlook_link": "",
+    "analysis": {
+      "customer_account": "Sample & Partners LLP",
+      "contact_name": "Raj Patel",
+      "contact_email": "rpatel@samplepartners.com",
+      "direction": "Inbound",
+      "category": "Praise",
+      "sentiment": "Positive",
+      "urgency": "P4 - Low",
+      "summary": "Raj thanked the team for the QBR and said the new experience dashboards are landing well with practice leaders.",
+      "customer_asks": [],
+      "action_items": [],
+      "commitments_made": [],
+      "risk_signals": [],
+      "products_mentioned": ["Experience dashboards"],
+      "needs_response": false,
+      "suggested_next_step": "Ask Raj whether he would be a reference for the experience dashboards."
+    }
+  }
+]

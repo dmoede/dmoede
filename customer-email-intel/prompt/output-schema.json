@@ -1,0 +1,33 @@
+{
+  "customer_account": "Example Law",
+  "contact_name": "Jane Smith",
+  "contact_email": "jsmith@examplelaw.com",
+  "direction": "Inbound",
+  "category": "Data / Integration",
+  "sentiment": "Negative",
+  "urgency": "P2 - High",
+  "summary": "Example Law's nightly Aderant load has failed since Monday, so their matter dashboards are three days stale. Jane needs it fixed before Thursday's partner meeting.",
+  "customer_asks": [
+    "Restore the nightly Aderant load",
+    "Confirm root cause in writing"
+  ],
+  "action_items": [
+    {
+      "task": "Open a P2 support ticket and assign to integrations",
+      "owner": "",
+      "due_date": "2026-10-14"
+    }
+  ],
+  "commitments_made": [
+    "Support promised an update by end of day Tuesday"
+  ],
+  "risk_signals": [
+    "Repeated data-load failures this quarter"
+  ],
+  "products_mentioned": [
+    "Aderant",
+    "Matter dashboards"
+  ],
+  "needs_response": true,
+  "suggested_next_step": "Call Jane today with an ETA and a named owner before the Thursday partner meeting."
+}
